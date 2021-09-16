@@ -1,0 +1,116 @@
+body {
+    background-color: linen;
+}
+
+
+
+h1.intro {
+    text-align:center;
+    font-size: 40px;
+	color: maroon;
+}
+
+section {
+    border: 5px solid navy;
+	font-size: 100%;
+	font-weight: bold;
+	padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+section.center {
+    border: 5px solid navy;
+    text-align: center;
+	font-size: 100%;
+	font-weight: bold;
+	padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+
+section.flat {
+	border-style: none;
+}
+
+section.flat button {
+	font-size: 100%;
+	font-weight: bold;
+	background-color: #66FFFF;
+	
+}
+section.flat button:active,
+section.flat button.active {
+	background-color: #C2FFFF;
+}
+
+
+button.a {
+	height:auto;
+	width: auto;
+	border: 4px solid navy;
+	border-radius: 15px;
+	box-shadow: 5px 5px;
+	background-color: #66FFFF;
+	padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+	font-size: 70%;
+	font-weight: bold;
+}
+
+button.b {
+	height:auto;
+	width: auto;
+	border: 4px solid navy;
+	border-radius: 10px;
+	box-shadow: 0px 0px;
+	background-color: #66FFFF;
+	padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+	font-size: 100%;
+	font-weight: bold;
+}
+
+	
+
+button.a {
+	height:auto;
+	width: auto;
+	border: 4px solid navy;
+	border-radius: 15px;
+	box-shadow: 5px 5px;
+	background-color: #66FFFF;
+	padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+	font-size: 70%;
+	font-weight: bold;
+}
+
+button.b {
+	height:auto;
+	width: auto;
+	border: 4px solid navy;
+	border-radius: 10px;
+	box-shadow: 0px 0px;
+	background-color: #66FFFF;
+	padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+	font-size: 100%;
+	font-weight: bold;
+}
+
+p, pre, form {
+	font-size: 100%;
+}
+
