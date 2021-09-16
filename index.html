@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="cnc.css">
+
+<title>Rectangular to Polar</title>
+
+</head>
+<body>
+
+
+<h1 class="intro">Convert Phasor Form: Rectangular to Polar</h1>
+
+
+<section class="center">
+
+<p>FIRST, enter real and imaginary values:</p>
+
+<form id="frm1" onchange=noResult();>
+	Real Part: <input name="realinp" value="0.0">
+</form>
+<form id="frm2" onchange=noResult();>
+	Imaginary Part:  <input name="imaginp" value="0.0">
+</form>
+
+<BR>
+
+<p>SECOND, click "Convert" button to calculate polar terms.</p>
+
+<section class="flat">
+<button onclick=convert();>Convert</button>
+
+<p id="magnitude">Magnitude not computed</p>
+<p id="angle">Angle not computed</p>
+
+
+<button  onclick='storeV("V1")'>Store result as V1</button>
+<button  onclick='storeV("V2")'>Store result as V2</button>
+<button  onclick='storeV("V3")'>Store result as V3</button>
+</section>
+</section>
+
+
+<script src=phasorAccess.js> </script>
+<script>
+
+
+	
+function convert() {
+	//alert("function 'convert' invoked");	
+    var text = "";
+    var i;
+    var inpval;
+    var realpt = 0;
+    var imagpt = 0;
+    var xn = 0;
+    var valid = 0;
+    var magn = Number(0);
+    var rndmag = 0;
+    var rndtrm = 0;
+    var xsin = Number(0);
+    var radians = Number(0);
+    var degrees = Number(0);
+    var degrnd = "0";
+    
+	var x1 = document.getElementById("frm1");
+	var x2 = document.getElementById("frm2");
+
+	realpt = Number(x1.elements[0].value );
+    imagpt = Number(x2.elements[0].value );
+	v1Qual = vQual(realpt,imagpt); // check validity of entries
+    
+	if ( v1Qual) {
+		//alert("Both inputs are valid ");
+		magn = Number(Math.sqrt(realpt*realpt + imagpt*imagpt));
+     	
+     	if (magn > 0) {
+    		
+    		xsin = Number(imagpt)/magn;
+    		if (realpt >= 0 ) {
+       			radians = Math.asin(xsin);
+       		} else {
+       			if (imagpt > 0) {
+       				radians = -Math.asin(xsin) + Math.PI;
+       			} else {
+       				radians = -Math.asin(xsin) - Math.PI ;
+       			}
+         	}
+       		       			
+    		degrees = radians*(180/Math.PI);
+    		
+						
+    	} else {
+			degrees = 0;
+		}
+		
+		document.getElementById("magnitude").innerHTML = ("Magnitude: " + magn);
+		document.getElementById("angle").innerHTML = ("Angle (degrees): " + degrees);
+		tempVMag = String(magn);
+		tempVAng = String(degrees);
+		
+    } else {
+    	alert("NO CALCULATION: One or more operand entries is not a valid number.");
+		tempVMag = "NaN";
+		tempVAng = "NaN";
+	}
+	
+}
+
+function noResult() {
+		document.getElementById("magnitude").innerHTML = ("Magnitude not computed");
+		document.getElementById("angle").innerHTML = ("Angle not computed");
+
+}
+
+</script>
+
+
+
+
+<p id="bigSpace">
+<BR>
+<BR>
+<BR>
+</p>
+
+</body>
